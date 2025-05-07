@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Post</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMVEm2H8xHOeP2EEl5QpuYcz4p5F65G6d3fmj" crossorigin="anonymous">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+    h1 { text-align: center; }
+    form { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    input[type=text], textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc; }
+    button { background-color: #28a745; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #218838; }
+    a { display: block; text-align: center; margin-top: 10px; text-decoration: none; color: #007BFF; }
+  </style>
+</head>
+<body>
+  <h1>Create New Post</h1>
+  <form action="/posts" method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <textarea name="content" rows="8" placeholder="Content" required></textarea>
+    <button type="submit">Publish</button>
+  </form>
+  <a href="/">Back to Home</a>
+
+ 
+</section>
+</body>
+</html>

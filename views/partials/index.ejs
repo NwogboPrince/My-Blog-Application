@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+    h1 { text-align: center; }
+    a { text-decoration: none; color: #007BFF; }
+    ul { list-style: none; padding: 0; }
+    li { background: #fff; margin: 10px 0; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .actions a { margin-right: 10px; font-size: 14px; }
+    .create-btn {
+      display: inline-block; background: #28a745; color: #fff; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px; text-decoration: none;
+    }
+    .btn {
+      background: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-center">
+      <li class="nav-item" style="font-size: 20px; font-weight: bold; text-align: center; display: block;"><span>My Blog</span></li>
+    </div>
+  </nav>
+
+  <a class="create-btn" href="/posts/new">Create New Post</a>
+  <a class="btn" href="/articles">Go to Articles</a>
+  <ul>
+    <% if (posts.length === 0) { %>
+      <p>No posts yet. Start by creating one!</p>
+    <% } %>
+    <% posts.forEach(post => { %>
+      <li>
+        <h2><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
+        <div class="actions">
+          <a href="/posts/<%= post.id %>/edit">Edit</a>
+          <form style="display:inline;" action="/posts/<%= post.id %>/delete" method="POST">
+            <button type="submit" name="delete" style="background:none; border:none; color:#dc3545; cursor:pointer;">Delete</button>
+          </form>
+        </div>
+      </li>
+    <% }); %>
+  </ul>
+
+  <ul>
+    <% if (posts.length === 0) { %>
+      <p>No posts yet. Start by creating one!</p>
+    <% } %>
+    <% posts.forEach(post => { %>
+      <li>
+        <h2><a href="/articles"><%= post.title %></a></h2>
+        <p>By <%= post.author %></p>
+      </li>
+    <% }); %>
+  </ul>
+  
+</body>
+</html>

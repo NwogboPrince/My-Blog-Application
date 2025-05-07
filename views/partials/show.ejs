@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= post.title %></title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    h1 { margin-top: 0; }
+    p { line-height: 1.6; }
+    a { text-decoration: none; color: #007BFF; display: inline-block; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><%= post.title %></h1>
+    <p><%= post.content %></p>
+    <a href="/">← Back to Home</a>
+  </div>
+</body>
+</html>
